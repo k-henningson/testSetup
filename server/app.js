@@ -5,7 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const catsRoutes = require('./routes/catsRoutes');
+const userRoutes = require('./routes/routes');
 
 const app = express();
 
@@ -13,7 +13,7 @@ const app = express();
 app.use(morgan(ENVIROMENT));
 app.use(bodyParser.json());
 
-app.use('/cats', catsRoutes);
+app.use('/users', userRoutes);
 
 
 app.get('/', (req, res) => {
